@@ -96,3 +96,11 @@ for ($sum = 0, $i = 0; $sum <= 10; $i++) {
     $sum += $arrTwo[$i];
 }
 
+//#15
+function printStringReturnNumber($stringOne)
+{
+    echo $stringOne;
+    return rand(1,1000);
+}
+$my_num = printStringReturnNumber('blablabla');
+echo $my_num;
