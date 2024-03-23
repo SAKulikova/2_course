@@ -10,7 +10,10 @@ var_dump($matches);
 //#1.b
 $text = 'a1b2c3';
 $change = '/[0-9]/ui';
-$result = preg_replace_callback($change, function($matches) {
-    return pow($matches[0], 3);
-}, $text);
+function replaceWithCube($matches) {
+    $number = (int)$matches[0];
+    $cubedNumber = pow($number, 3);
+    return $cubedNumber;
+}
+$result = preg_replace_callback($change, 'replaceWithCube', $text);
 echo $result;
